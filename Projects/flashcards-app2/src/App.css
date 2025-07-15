@@ -1,0 +1,127 @@
+/* ---- App.css ---- */
+
+/* Basic resets and font */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  /* Light greenish background color */
+  background-color: #f2f7f2;
+}
+
+/* Center the main app container */
+.App {
+  max-width: 600px;
+  margin: 40px auto;
+  background-color: #ffffff; /* White container */
+  border-radius: 8px;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Header styling */
+header h1 {
+  font-size: 2em;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+header p {
+  margin-top: 5px;
+  color: #555;
+}
+
+/* Stats row (number of cards, streaks) */
+.stats {
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+/* The container to hold the flipping card */
+.card-container {
+  width: 300px;
+  height: 200px;
+  margin: 0 auto;
+  perspective: 1000px; /* Important for 3D flip effect */
+}
+
+/* The card itself, which can be flipped */
+.card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s; /* Smooth flip animation */
+}
+
+/* When the card is flipped, rotate it 180 degrees */
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+/* Both front and back faces share some styling */
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #333;
+  border-radius: 8px;
+  background-color: #fff9c4; /* Pale yellow background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden; /* Hide the reverse side */
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 1.2em;
+  color: #333;
+}
+
+/* The back face is rotated 180 degrees */
+.card-back {
+  transform: rotateY(180deg);
+}
+
+/* Form for guessing the answer */
+form {
+  margin-top: 20px;
+}
+
+form label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+form input {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin-left: 5px;
+}
+
+/* Feedback text (Correct!/Incorrect...) */
+.feedback {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* Shuffle button and any other controls */
+.controls {
+  margin-top: 20px;
+}
+
+/* Basic button styling */
+button {
+  background-color: #8bc34a; /* Soft green */
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  margin: 0 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+button:hover {
+  background-color: #7cb342;
+}
